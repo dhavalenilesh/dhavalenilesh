@@ -1,0 +1,24 @@
+name: hello-world
+on: push
+jobs:
+ push-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-PUSH-step1
+        run: echo "*********PUSHHello World!********"
+      - name: my-PUSH-step2
+        run: echo "********Hello World!-22222********"
+      - name: my-PUSH-step4
+        run: echo "********Hello World!-********"
+      - name: my-PUSH-step3
+        run: echo "********Hello World!********"
+ 
+ pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-PULL-step2
+        run: echo "STEP1...######## PULL:Hello World!#########"
+      - name: my-PULL-step1
+        run: echo "STEP2...######## PULL:Hello World!#########"
+      - name: my-PULL-step3
+        run: echo "STEP3...######## PULL:Hello World!#########"
