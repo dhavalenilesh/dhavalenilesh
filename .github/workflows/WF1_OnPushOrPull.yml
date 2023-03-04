@@ -25,5 +25,5 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "The PR was merged to Main!!!yeehh Git Actions!!!"
+       - name: my-PULL-step3
+         run: echo "The PR was merged to Main!!!yeehh Git Actions!!!"
