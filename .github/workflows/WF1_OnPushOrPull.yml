@@ -30,5 +30,5 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - name: PR Merged to MAIN
+    - name: PRMergedtoMAIN
       run: echo "The PR was merged!! Enjoy!!" 
