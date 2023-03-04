@@ -4,13 +4,13 @@ jobs:
  push-job:
     runs-on: ubuntu-latest
     steps:
-      - name: WorkFlowTest1_4March==> Name ONE
+      - name: PUSH::WorkFlowTest1_4March==> Name ONE
         run: echo "PUSH:::WorkFlowTest1_4March==> Name ONE"
-      - name: WorkFlowTest1_4March==> Name TWO
+      - name: PUSH::WorkFlowTest1_4March==> Name TWO
         run: echo "PUSH:::WorkFlowTest1_4March==> Name TWO"
-      - name: WorkFlowTest1_4March==> Name THREE
+      - name: PUSH::WorkFlowTest1_4March==> Name THREE
         run: echo "PUSH:::WorkFlowTest1_4March==> Name THREE"
-      - name: WorkFlowTest1_4March==> Name FOUR
+      - name: PUSH::WorkFlowTest1_4March==> Name FOUR
         run: echo "PUSH:::WorkFlowTest1_4March==> Name FOUR"
  
  pull_request:
