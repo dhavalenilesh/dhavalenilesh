@@ -22,7 +22,8 @@ jobs:
       - name: my-PULL-step3
         run: echo "STEP3...######## PULL:Hello World!#########"
  merged:
-    runs-on: ubuntu-latest
-    steps:
+  if: ${{github.event.pull_request.merged == true}}
+  runs-on: ubuntu-latest
+  steps:
     - name: MergeEventToMain
       run: echo "The PR was merged!! Enjoy!!"
