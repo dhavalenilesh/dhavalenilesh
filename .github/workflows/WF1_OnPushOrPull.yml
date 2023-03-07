@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-PUSH-step1
-        run: echo "*********PUSH to Step--1--Hello World!********"
+        run: echo "*********PUSH to Step--1--Hello World!********Updated Branch 01 Text"
       - name: my-PUSH-step2
-        run: echo "********PUSH Step--2--Hello World!-22222********"
+        run: echo "********PUSH Step--2--Hello World!-22222********Updated Branch 02 Text"
       - name: my-PUSH-step4
         run: echo "********PUSH Step--4--Hello World!-********"
       - name: my-PUSH-step3
