@@ -4,12 +4,15 @@ on:
     branches: [Branch1_04March]
     types: [closed]
   push:
+   branches:
+      - main
+      - develop
 jobs:
  push-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-PUSH-step1
-        run: echo "*********PUSH Step--1--Hello World!********"
+        run: echo "*********PUSH to Step--1--Hello World!********"
       - name: my-PUSH-step2
         run: echo "********PUSH Step--2--Hello World!-22222********"
       - name: my-PUSH-step4
