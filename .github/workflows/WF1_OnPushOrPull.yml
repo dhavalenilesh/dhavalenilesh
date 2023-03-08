@@ -39,4 +39,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Merged Action2:::!!!Git_Merged::The PR was merged!!!!
+        echo "Merged Action2:::!!!Git_Merged::The PR was merged!!!!"
