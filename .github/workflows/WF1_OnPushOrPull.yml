@@ -38,5 +38,5 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "Merged Action2:::!!!Git_Merged::The PR was merged!!!!"
+    - name: PRMergedtoMAIN
+      run: echo "The PR was merged!! Enjoy!!--Updated Branch04--Test1--Merge"
