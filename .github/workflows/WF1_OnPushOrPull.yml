@@ -1,20 +1,15 @@
 name: hello-world-Git-Action
-on: 
+'on': 
   pull_request:
-    branches: [Branch1_04March]
-    types: [closed]
   push:
-   branches:
-      - main
-      - develop
 jobs:
  push-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-PUSH-step1
-        run: echo "*********PUSH to Step--1--Hello World!********Updated Branch 01 Text"
+        run: echo "*********PUSH Step--1--Hello World!********"
       - name: my-PUSH-step2
-        run: echo "********PUSH Step--2--Hello World!-22222********Updated Branch 02 Text"
+        run: echo "********PUSH Step--2--Hello World!-22222********"
       - name: my-PUSH-step4
         run: echo "********PUSH Step--4--Hello World!-********"
       - name: my-PUSH-step3
@@ -23,20 +18,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-PULL-step2
-        run: echo "STEP2...######## PULL:Hello World!#########"
+        run: echo "Action - pull_request"
       - name: my-PULL-step1
         run: echo "STEP1...######## PULL:Hello World!#########"
       - name: my-PULL-step3
         run: echo "STEP3...######## PULL:Hello World!#########"
  merged:
-  if: github.event.pull_request.merged == true
+  if: github.event.pull_request.merged == false
   runs-on: ubuntu-latest
   steps:
     - name: MergeEventToMain
-      run: echo "Merged_Action1:!!Merge Failed!!!"
- if_merged:
-    if: github.event.pull_request.merged == true
+      run: echo "Merge Failed!!!"
+
+ create-pull-request:
+    runs-on: ubuntu-latest
+    steps:      
+       - name: my-PULL-step2
+         run: echo "ACTION ::== create-pull-request"
+ build-on-merge:
+    if: startsWith(github.event.head_commit.message, 'Merge pull request')
     runs-on: ubuntu-latest
     steps:
-    - name: PRMergedtoMAIN
-      run: echo "The PR was merged!! Enjoy!!--Updated Branch04--Test1--Merge"
+     - name: my-PULL-step2
+       run: echo "Action ::= build-on-merge!!!build-on-merge"
+
+ merge-me:
+    name: Merge me!
+    runs-on: ubuntu-latest
+    steps:
+     - name: MergeEventToMain
+       run: echo "Action ::= merge-me!!!"
