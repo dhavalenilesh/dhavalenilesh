@@ -47,7 +47,7 @@ jobs:
 
 push-job:
       runs-on: ubuntu-latest
-        steps:
+      steps:
           - name: Run a Script==> Push Job
             run: echo "PUSH ==> I AM RUNNING IN **DEV** ENVIRONMENT *****"
 
