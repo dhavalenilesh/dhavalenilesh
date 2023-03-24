@@ -4,47 +4,75 @@ name: hello-world-Git-Action
   pull_request:
   push:
 jobs:
- push-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-PUSH-step1
-        run: echo "*********PUSH Step--1--Hello World!********"
-      - name: my-PUSH-step2
-        run: echo "********PUSH Step--2--Hello World!-22222********"
-      - name: my-PUSH-step4
-        run: echo "********PUSH Step--4--Hello World!-********"
-      - name: my-PUSH-step3
-        run: echo "********PUSH Step--3--Hello World!********"
- pull_request:
-    runs-on: ubuntu-latest
-    steps:
-      - name: my-PULL-step2
-        run: echo "Action - pull_request"
-      - name: my-PULL-step1
-        run: echo "STEP1...######## PULL:Hello World!#########"
-      - name: my-PULL-step3
-        run: echo "STEP3...######## PULL:Hello World!#########"
- merged:
-  if: github.event.pull_request.merged == false
-  runs-on: ubuntu-latest
-  steps:
-    - name: MergeEventToMain
-      run: echo "Merge Failed!!!"
-
- create-pull-request:
-    runs-on: ubuntu-latest
-    steps:      
-       - name: my-PULL-step2
-         run: echo "ACTION ::== create-pull-request"
- build-on-merge:
-    if: startsWith(github.event.head_commit.message, 'Merge pull request')
-    runs-on: ubuntu-latest
-    steps:
-     - name: my-PULL-step2
-       run: echo "Action ::= build-on-merge!!!build-on-merge"
- merge-me:
-    name: Merge me!
-    runs-on: ubuntu-latest
-    steps:
-     - name: MergeEventToMain
-       run: echo "Action ::= merge-me!!!"
+  DEV:
+     runs-on: ubuntu-latest
+     environment: DEV
+  push-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Run a Script==> Push Job
+            run: echo "PUSH ==> I AM RUNNING IN **DEV** ENVIRONMENT *****"
+  pull_request:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Run a Script==> Pull Job
+            run: echo "Action - pull_request"
+  merged:
+       if: github.event.pull_request.merged == false
+       runs-on: ubuntu-latest
+       steps:
+        - name: Run a Script==> Merged Job
+          run: echo "Merge Failed!!!"
+  create-pull-request:
+        runs-on: ubuntu-latest
+        steps:      
+           - name: my-PULL-step2
+             run: echo "ACTION ::== create-pull-request"
+  build-on-merge:
+        if: startsWith(github.event.head_commit.message, 'Merge pull request')
+        runs-on: ubuntu-latest
+        steps:
+         - name: my-PULL-step2
+           run: echo "Action ::= build-on-merge!!!build-on-merge"
+  merge-me:
+        name: Merge me!
+        runs-on: ubuntu-latest
+        steps:
+         - name: MergeEventToMain
+           run: echo "Action ::= merge-me!!!"
+  QA:
+      runs-on: ubuntu-latest
+      environment: QA
+         push-job:
+         runs-on: ubuntu-latest
+         steps:
+          - name: Run a Script==> Push Job
+            run: echo "PUSH ==> I AM RUNNING IN **DEV** ENVIRONMENT *****"
+      pull_request:
+         runs-on: ubuntu-latest
+         steps:
+          - name: Run a Script==> Pull Job
+            run: echo "Action - pull_request"
+         merged:
+          if: github.event.pull_request.merged == false
+           runs-on ubuntu-latest
+          steps:
+           - name Run a Script==> Merged Job
+             run echo "Merge Failed!!!"
+         create-pull-request:
+            runs-on: ubuntu-latest
+            steps:      
+            - name: my-PULL-step2
+              run: echo "ACTION ::== create-pull-request"
+         build-on-merge:
+          if: startsWith(github.event.head_commit.message, 'Merge pull request')
+          runs-on: ubuntu-latest
+          steps:
+          - name: my-PULL-step2
+            run: echo "Action ::= build-on-merge!!!build-on-merge"
+         merge-me:
+         - name: Merge me!
+            runs-on ubuntu-latest
+           steps:
+           - name: MergeEventToMain
+             run: echo "Action ::= merge-me!!!"
