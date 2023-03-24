@@ -41,14 +41,14 @@ jobs:
          - name: MergeEventToMain
            run: echo "Action ::= merge-me!!!"
   QA:
-      runs-on: ubuntu-latest
-      environment: QA
-         push-job:
-         runs-on: ubuntu-latest
-         steps:
+        runs-on: ubuntu-latest
+        environment: QA
+push-job:
+       runs-on: ubuntu-latest
+        steps:
           - name: Run a Script==> Push Job
             run: echo "PUSH ==> I AM RUNNING IN **DEV** ENVIRONMENT *****"
-      pull_request:
+       pull_request:
          runs-on: ubuntu-latest
          steps:
           - name: Run a Script==> Pull Job
