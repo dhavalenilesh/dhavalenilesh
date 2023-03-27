@@ -45,13 +45,13 @@ jobs:
         runs-on: ubuntu-latest
         environment: QA
 
-push-job:
-      runs-on: ubuntu-latest
-      steps:
+  push-job:
+       runs-on: ubuntu-latest
+       steps:
           - name: Run a Script==> Push Job
             run: echo "PUSH ==> I AM RUNNING IN **DEV** ENVIRONMENT *****"
 
-pull_request:
+  pull_request:
         runs-on: ubuntu-latest
         steps:
         - name: Run a Script==> Pull Job
@@ -62,11 +62,11 @@ pull_request:
           steps:
            - name Run a Script==> Merged Job
              run echo "Merge Failed!!!"
-          create-pull-request:
+  create-pull-request:
             runs-on: ubuntu-latest
             steps:      
             - name: my-PULL-step2
-              run: echo "ACTION ::== create-pull-request"
+            run: echo "ACTION ::== create-pull-request"
           build-on-merge:
             if: startsWith(github.event.head_commit.message, 'Merge pull request')
             runs-on: ubuntu-latest
